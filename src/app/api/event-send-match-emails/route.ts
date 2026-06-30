@@ -46,20 +46,20 @@ function buildEmailHtml(
   const matchRows = matches
     .map((m) => {
       const linkedinLink = m.linkedin
-        ? `<a href="${m.linkedin}" style="color: #1d3d0f; text-decoration: underline;">LinkedIn Profile</a>`
+        ? `<a href="${m.linkedin}" style="color: #1e1b4b; text-decoration: underline;">LinkedIn Profile</a>`
         : "";
       const interests = m.profile.can_offer?.join(", ") || "";
       return `
         <tr>
           <td style="padding: 16px 0; border-bottom: 1px solid rgba(29,61,15,0.08);">
-            <div style="font-size: 15px; font-weight: 600; color: #1d3d0f; margin-bottom: 2px;">
+            <div style="font-size: 15px; font-weight: 600; color: #1e1b4b; margin-bottom: 2px;">
               ${m.rank}. ${m.profile.name}
             </div>
-            <div style="font-size: 13px; color: #1d3d0f99; margin-bottom: 4px;">
+            <div style="font-size: 13px; color: #1e1b4b99; margin-bottom: 4px;">
               ${m.profile.role} at ${m.profile.company}
             </div>
-            ${interests ? `<div style="font-size: 13px; color: #1d3d0f; margin-bottom: 4px;">
-              <span style="background: #e8ff79; padding: 2px 8px; border-radius: 6px; font-weight: 500;">Can offer: ${interests}</span>
+            ${interests ? `<div style="font-size: 13px; color: #1e1b4b; margin-bottom: 4px;">
+              <span style="background: #a5b4fc; padding: 2px 8px; border-radius: 6px; font-weight: 500;">Can offer: ${interests}</span>
             </div>` : ""}
             ${linkedinLink ? `<div style="margin-top: 6px; font-size: 13px;">${linkedinLink}</div>` : ""}
           </td>
@@ -77,15 +77,15 @@ function buildEmailHtml(
   }
 </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #fdfff0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+<body style="margin: 0; padding: 0; background-color: #eef2ff; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
   <div style="max-width: 520px; margin: 0 auto; padding: 40px 24px;">
     <div style="text-align: center; margin-bottom: 32px;">
-      <h1 style="color: #1d3d0f; font-size: 22px; font-weight: 700; margin: 0;">Your MatchUp Results</h1>
-      <p style="color: #1d3d0f99; font-size: 14px; margin: 8px 0 0;">${eventName}</p>
+      <h1 style="color: #1e1b4b; font-size: 22px; font-weight: 700; margin: 0;">Your MatchUp Results</h1>
+      <p style="color: #1e1b4b99; font-size: 14px; margin: 8px 0 0;">${eventName}</p>
     </div>
     <div style="background: #ffffff; border-radius: 16px; padding: 24px; border: 1px solid rgba(29,61,15,0.1);">
-      <p style="color: #1d3d0f; font-size: 15px; margin: 0 0 4px;">Hi ${recipientName} 👋</p>
-      <p style="color: #1d3d0f; font-size: 14px; margin: 0 0 20px; line-height: 1.5;">
+      <p style="color: #1e1b4b; font-size: 15px; margin: 0 0 4px;">Hi ${recipientName} 👋</p>
+      <p style="color: #1e1b4b; font-size: 14px; margin: 0 0 20px; line-height: 1.5;">
         Based on your profile, here are the people we think you should meet today. Go find them!
       </p>
       <table style="width: 100%; border-collapse: collapse;">
@@ -94,8 +94,8 @@ function buildEmailHtml(
     </div>
     ${episodes && episodes.length > 0 ? `
     <div style="background: #ffffff; border-radius: 16px; padding: 24px; border: 1px solid rgba(29,61,15,0.1); margin-top: 20px;">
-      <p style="color: #1d3d0f; font-size: 14px; font-weight: 600; margin: 0 0 4px;">While you wait to connect...</p>
-      <p style="color: #1d3d0f99; font-size: 13px; margin: 0 0 16px;">Hear from founders who've been in your shoes.</p>
+      <p style="color: #1e1b4b; font-size: 14px; font-weight: 600; margin: 0 0 4px;">While you wait to connect...</p>
+      <p style="color: #1e1b4b99; font-size: 13px; margin: 0 0 16px;">Hear from founders who've been in your shoes.</p>
       <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
         <tr>
           ${episodes.slice(0, 3).map((ep, i) => `
@@ -107,7 +107,7 @@ function buildEmailHtml(
         </tr>
       </table>
     </div>` : ""}
-    <p style="text-align: center; color: #1d3d0f40; font-size: 12px; margin-top: 24px;">
+    <p style="text-align: center; color: #1e1b4b40; font-size: 12px; margin-top: 24px;">
       &copy; Event Matchmaking
     </p>
   </div>

@@ -60,21 +60,21 @@ export async function POST(request: Request) {
       html: `
 <!DOCTYPE html>
 <html>
-<body style="margin: 0; padding: 0; background-color: #fdfff0; font-family: 'Inter', -apple-system, sans-serif;">
+<body style="margin: 0; padding: 0; background-color: #eef2ff; font-family: 'Inter', -apple-system, sans-serif;">
   <div style="max-width: 440px; margin: 0 auto; padding: 40px 24px;">
     <div style="text-align: center; margin-bottom: 24px;">
       </div>
     <div style="background: #ffffff; border-radius: 16px; padding: 32px 24px; border: 1px solid rgba(29,61,15,0.1); text-align: center;">
-      <p style="color: #1d3d0f; font-size: 15px; margin: 0 0 4px; font-weight: 600;">Admin Access Request</p>
-      <p style="color: #1d3d0f99; font-size: 13px; margin: 0 0 24px; line-height: 1.5;">
+      <p style="color: #1e1b4b; font-size: 15px; margin: 0 0 4px; font-weight: 600;">Admin Access Request</p>
+      <p style="color: #1e1b4b99; font-size: 13px; margin: 0 0 24px; line-height: 1.5;">
         ${auth.email.split("@")[0]} is adding you as an admin on the Event Dashboard. Share this code with them to confirm.
       </p>
-      <div style="background: #1d3d0f; border-radius: 12px; padding: 20px; margin: 0 auto; max-width: 200px;">
-        <span style="color: #e8ff79; font-size: 32px; font-weight: 700; letter-spacing: 6px; font-family: monospace;">
+      <div style="background: #1e1b4b; border-radius: 12px; padding: 20px; margin: 0 auto; max-width: 200px;">
+        <span style="color: #a5b4fc; font-size: 32px; font-weight: 700; letter-spacing: 6px; font-family: monospace;">
           ${code}
         </span>
       </div>
-      <p style="color: #1d3d0f50; font-size: 11px; margin: 16px 0 0;">
+      <p style="color: #1e1b4b50; font-size: 11px; margin: 16px 0 0;">
         Expires in 10 minutes. If you didn't expect this, ignore it.
       </p>
     </div>

@@ -483,7 +483,7 @@ export default function EventDashboard({
                 {/* Status indicator */}
                 <span className={`text-[11px] px-2.5 py-1 rounded-full font-semibold flex items-center gap-1.5 ${
                   event.is_active
-                    ? "bg-[#e8ff79]/40 text-brand-dark"
+                    ? "bg-[#a5b4fc]/40 text-brand-dark"
                     : "bg-brand-dark/5 text-brand-dark/55"
                 }`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${event.is_active ? "bg-brand-dark" : "bg-brand-dark/20"}`} />
@@ -1868,7 +1868,7 @@ function EmailsTab({
               <button
                 onClick={handleBatchSend}
                 disabled={sendingEmails || matches.length === 0}
-                className="px-4 py-2 bg-brand-dark text-[#e8ff79] rounded-lg text-sm font-semibold hover:bg-black transition-colors disabled:opacity-50"
+                className="px-4 py-2 bg-brand-dark text-[#a5b4fc] rounded-lg text-sm font-semibold hover:bg-black transition-colors disabled:opacity-50"
               >
                 {sendingEmails
                   ? "Sending..."
@@ -1942,7 +1942,7 @@ function DemandSupplyChart({ participants }: { participants: Participant[] }) {
                     <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${
                       gap > 0
                         ? "bg-brand-dark/10 text-brand-dark/70"
-                        : "bg-[#e8ff79]/30 text-brand-dark/50"
+                        : "bg-[#a5b4fc]/30 text-brand-dark/50"
                     }`}>
                       {gap > 0 ? `+${gap} gap` : `${Math.abs(gap)} surplus`}
                     </span>
