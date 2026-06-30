@@ -11,15 +11,30 @@ Supabase (Postgres + Auth) · Brevo SMTP · Vercel.
 
 ---
 
-## Run locally
+## Run locally (no backend needed)
 
 ```bash
 npm install
-cp .env.local.example .env.local      # then fill in your values
 npm run dev
 ```
 
 Open http://localhost:3000 (public form) and http://localhost:3000/admin (admin dashboard).
+
+**Mock mode is on by default.** With no Supabase configured, the app runs entirely on
+in-memory dummy data (see `src/lib/mock/`): the admin dashboard opens straight in as a
+demo admin, with one sample event, six fictional founders, and precomputed matches. Data
+edits persist in memory and reset on a full page reload. No login, database, or email
+setup required — great for demos.
+
+### Connecting a real backend (optional)
+To switch off mock mode and use a real database, set Supabase env vars:
+
+```bash
+cp .env.local.example .env.local      # then fill in your values
+```
+
+As soon as `NEXT_PUBLIC_SUPABASE_URL` is a real URL, the app uses Supabase instead of the
+mock. Then run `supabase/schema.sql` (and optionally `supabase/seed.sql`) in your project.
 
 ---
 

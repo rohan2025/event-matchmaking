@@ -1,13 +1,10 @@
-import { createClient } from "@supabase/supabase-js";
+import { serverSupabase } from "./server-supabase";
 
 // Hardcoded fallback — always have access even if DB table doesn't exist yet
 const SUPER_ADMIN_EMAILS = ["rohanverma200in@gmail.com"];
 
 export function getSupabaseAdmin() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  return serverSupabase();
 }
 
 /**

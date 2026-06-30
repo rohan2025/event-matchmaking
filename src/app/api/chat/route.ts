@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { serverSupabase } from "@/lib/server-supabase";
 import { Profile, ChatMessage } from "@/lib/types";
 
 function getGroqClient() {
@@ -13,10 +13,7 @@ function getGroqClient() {
 }
 
 function getSupabase() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
-  );
+  return serverSupabase();
 }
 
 function formatProfile(p: Profile): string {

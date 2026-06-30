@@ -1,14 +1,11 @@
-import { createClient } from "@supabase/supabase-js";
+import { serverSupabase } from "@/lib/server-supabase";
 import { NextResponse } from "next/server";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const nodemailer = require("nodemailer");
 
 // Lazy init — avoid crashing at build time when env vars aren't available
 function getSupabaseAdmin() {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  return serverSupabase();
 }
 
 function getTransporter() {

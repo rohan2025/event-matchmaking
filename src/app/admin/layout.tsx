@@ -33,6 +33,8 @@ export default function AdminLayout({
   const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  // Must be called unconditionally (before any early return) per rules of hooks.
+  const pathname = usePathname();
 
   useEffect(() => {
     checkSession();
@@ -172,7 +174,6 @@ export default function AdminLayout({
     );
   }
 
-  const pathname = usePathname();
   const isSettings = pathname === "/admin/settings";
   const isEventPage = pathname.startsWith("/admin/event/");
 

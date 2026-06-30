@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { serverSupabase } from "@/lib/server-supabase";
 import { NextResponse } from "next/server";
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const nodemailer = require("nodemailer");
@@ -155,10 +155,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
+  const supabaseAdmin = serverSupabase();
 
   // Fetch all profiles
   const { data: profiles } = await supabaseAdmin.from("profiles").select("*");
